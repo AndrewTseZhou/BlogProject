@@ -1,4 +1,4 @@
-# -*- coding utf-8
+# -*- coding: utf-8 -*-
 
 """
 Django settings for BlogProject project.
@@ -125,10 +125,12 @@ STATICFILES_FIRS = (
     os.path.join(BASE_DIR, 'static')
 )
 
+# 自定义用户model
+AUTH_USER_MODEL = 'blog.User'
+
 # 网站的基本信息配置
 SITE_NAME = "Andrew Tse的个人博客"
 SITE_DESC = "专注Android开发"
-
 
 # 自定义日志输出信息
 LOGGING = {
