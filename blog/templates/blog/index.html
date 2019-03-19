@@ -3,9 +3,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>某某某的个人博客</title>
-    <meta name="keywords" content=""/>
-    <meta name="description" content=""/>
+    <title>{{ SITE_NAME }}</title>
+    <meta name="keywords" content="{{ SITE_NAME }}"/>
+    <meta name="description" content="{{ SITE_DESC }}"/>
     <link href="{% static 'blog/css/base.css' %}" rel="stylesheet">
     <link href="{% static 'blog/css/index.css' %}" rel="stylesheet">
     <script type="text/javascript" src="{% static 'blog/js/jquery.min.js' %}"></script>
@@ -15,8 +15,8 @@
 <body>
 <header>
     <div class="logo">
-        <h1>某某某的个人博客</h1>
-        <p>梦虽虚幻,却是自己的梦想；位虽低微,却是自己的岗位；屋虽简陋,却是自己的家；志虽渺小,却是自己的追求。</p>
+        <h1>{{ SITE_NAME }}</h1>
+        <p>{{ SITE_DESC }}</p>
     </div>
     <nav id="topnav" class="f_r">
         <ul>
