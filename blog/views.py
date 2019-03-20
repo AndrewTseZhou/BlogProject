@@ -3,6 +3,8 @@ import logging
 from django.conf import settings
 from django.shortcuts import render
 
+from blog.models import Category
+
 logger = logging.getLogger("blog.views")
 
 
@@ -13,4 +15,5 @@ def global_setting(request):
 
 
 def index(request):
-    return render(request, "blog/index.html", locals())
+    category_list = Category.objects.all()
+    return render(request, "blog/index.html", {'category_list': category_list})
