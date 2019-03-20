@@ -83,6 +83,13 @@
                 </div>
                 <div class="bd bd-news">
                     <ul>
+                        {% for comment in article_comment_list %}
+                            <li><a href="/" target="_blank">{{ comment.title | slice:':15' }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="bd bd-news">
+                    <ul>
                         <li><a href="/" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
                         <li><a href="/" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
                         <li><a href="/" target="_blank">住在手机里的朋友</a></li>
