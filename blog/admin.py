@@ -21,13 +21,20 @@ class ArticleAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('title', 'desc', 'content'),
+            'fields': ('title', 'desc', 'content', 'user', 'category', 'tag',)
         }),
         ('高级设置', {
             'classes': ('collapse',),
             'fields': ('click_count', 'is_recommend'),
         }),
     )
+
+    class Media:
+        js = (
+            'blog/js/kindeditor-4.1.12/kindeditor-all-min.js',
+            'blog/js/kindeditor-4.1.12/lang/zh-CN.js',
+            'blog/js/kindeditor-4.1.12/config.js',
+        )
 
 
 admin.site.register(User)

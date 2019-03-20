@@ -121,9 +121,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_FIRS = (
-    os.path.join(BASE_DIR, 'static')
-)
+# STATICFILES_FIRS = (
+#     os.path.join(BASE_DIR, 'static')
+# )
+
+# 文件上传路径
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 # 自定义用户model
 AUTH_USER_MODEL = 'blog.User'
