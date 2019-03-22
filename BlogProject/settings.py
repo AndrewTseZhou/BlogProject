@@ -65,6 +65,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'blog.views.global_setting'
             ],
+            # 配置自定义的过滤器
+            'libraries': {
+                'my_filter': 'blog.templates.my_filter',
+            },
         },
     },
 ]
@@ -133,6 +137,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 AUTH_USER_MODEL = 'blog.User'
 
 # 网站的基本信息配置
+SITE_URL = 'http://localhost:8000/'
 SITE_NAME = "Andrew Tse的个人博客"
 SITE_DESC = "专注Android开发"
 
