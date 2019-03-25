@@ -23,6 +23,6 @@ from blog.upload import upload_image
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
-    path('uploads/', views.static.serve, {"document_root": settings.MEDIA_ROOT, }),
+    # url(r"^uploads/(?P<path>.*)$", "django.views.static.serve", {"document_root": settings.MEDIA_ROOT,}),
     path('admin/upload/', upload_image, name='upload_image'),
 ]

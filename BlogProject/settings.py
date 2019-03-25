@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3j2=&-0kbicqn1_le3)r&l117bj74a$sa-!shcp%d-$=w_@s91'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 # Application definition
 
@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'BlogProject',
         'USER': 'root',
-        'PASSWORD': 'xk1120167753',
+        'PASSWORD': 'Xk&1120167753',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -123,6 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATIC_ROOT = '/var/www/BlogProject/static/'
 STATIC_URL = '/static/'
 
 # STATICFILES_FIRS = (
