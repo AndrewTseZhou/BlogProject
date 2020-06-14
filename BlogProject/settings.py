@@ -26,7 +26,7 @@ SECRET_KEY = '3j2=&-0kbicqn1_le3)r&l117bj74a$sa-!shcp%d-$=w_@s91'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*', ]
 
 # Application definition
 
@@ -123,12 +123,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_ROOT = '/var/www/BlogProject/static/'
+# 用来将所有STATICFILES_DIRS中所有文件夹中的文件, 以及各app中static中的文件都复制过来, 为了部署到服务器方便
+# python3 manage.py collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_all')
+# 存放APP下的静态资源, 对应APP目录下的static
 STATIC_URL = '/static/'
 
-# STATICFILES_FIRS = (
-#     os.path.join(BASE_DIR, 'static')
-# )
+# 存放公共静态资源, 对应根目录下的static
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 # 文件上传路径
 MEDIA_URL = '/uploads/'
@@ -163,7 +167,7 @@ LOGGING = {
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': 'log/all.log',  # 日志输出文件
             'maxBytes': 1024 * 1024 * 5,  # 文件大小
-            'backupCount': 5,  # 备份份数
+            'backupCount': 1,  # 备份份数
             'formatter': 'standard',  # 使用哪种formatters日志格式
         },
         'error': {
@@ -171,7 +175,7 @@ LOGGING = {
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': 'log/error.log',
             'maxBytes': 1024 * 1024 * 5,
-            'backupCount': 5,
+            'backupCount': 1,
             'formatter': 'standard',
         },
         'console': {
@@ -184,7 +188,7 @@ LOGGING = {
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': 'log/script.log',
             'maxBytes': 1024 * 1024 * 5,
-            'backupCount': 5,
+            'backupCount': 1,
             'formatter': 'standard',
         },
         'scprits_handler': {
@@ -192,7 +196,7 @@ LOGGING = {
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': 'log/script.log',
             'maxBytes': 1024 * 1024 * 5,
-            'backupCount': 5,
+            'backupCount': 1,
             'formatter': 'standard',
         }
     },
